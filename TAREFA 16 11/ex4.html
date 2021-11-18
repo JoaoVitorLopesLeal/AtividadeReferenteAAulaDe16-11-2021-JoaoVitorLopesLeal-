@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Ex. 4</title>
+    </head>
+    <body>
+        <script lang="javascript">
+            function enviarDados()
+            {
+                var strgUsr, contrario, ii;
+
+                strgUsr = document.frm.string.value;
+                strgUsr = strgUsr.replace(/ /g, "");
+                contrario ="";
+
+                for (ii = strgUsr.length - 1; ii >= 0; ii--) {
+                    contrario = contrario.concat(strgUsr.charAt(ii));
+
+                }
+
+                if (strgUsr == contrario) {
+                    document.getElementById("saida").value = "Isso é um palindromo";                    
+                }
+                else
+                    document.getElementById("saida").value = "Isso não é um palindromo";
+
+            }
+
+        </script>
+        <form name="frm">
+            Digite algo qualquer: <input type="text" name="string"><br>
+        </form>
+        <input type="button" value="Enviar" onclick="enviarDados()" ><br>
+
+        <input type="text" id="saida" size="40" readonly><br>
+
+    </body>
+</html>

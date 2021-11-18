@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <title>Ex. 3</title>
+    </head>
+    <body>
+        <script>
+            function enviarDados()
+            {
+                var vog, con, digt, strgUsr, etc, ii;
+                strgUsr = (document.frm.string.value).toLowerCase();
+                con = 0;
+                vog = 0;
+                digt = 0;
+                etc = 0;
+
+
+                for (ii = 0; ii < strgUsr.length; ii++) 
+                {
+                    if ((strgUsr.charAt(ii) == "a") || 
+                    (strgUsr.charAt(ii) == "e") ||
+                    (strgUsr.charAt(ii) == "i") || 
+                    (strgUsr.charAt(ii) == "o") || 
+                    (strgUsr.charAt(ii) == "u")) {
+                        vog += 1    
+                    }
+                    else if ((strgUsr.charAt(ii) == 0)|| 
+                    (strgUsr.charAt(ii) == 1)|| 
+                    (strgUsr.charAt(ii) == 2)||
+                    (strgUsr.charAt(ii) == 3)|| 
+                    (strgUsr.charAt(ii) == 4)|| 
+                    (strgUsr.charAt(ii) == 5)|| 
+                    (strgUsr.charAt(ii) == 6)|| 
+                    (strgUsr.charAt(ii) == 7)|| 
+                    (strgUsr.charAt(ii) == 8)|| 
+                    (strgUsr.charAt(ii) == 9)) {
+                        digt += 1
+                    }
+                    else if ((strgUsr.charAt(ii) == "b") ||
+                    (strgUsr.charAt(ii) == "c") || 
+                    (strgUsr.charAt(ii) == "d") || 
+                    (strgUsr.charAt(ii) == "f") ||
+                    (strgUsr.charAt(ii) == "g") ||
+                    (strgUsr.charAt(ii) == "h") || 
+                    (strgUsr.charAt(ii) == "j") || 
+                    (strgUsr.charAt(ii) == "k") ||
+                    (strgUsr.charAt(ii) == "l") ||
+                    (strgUsr.charAt(ii) == "m") || 
+                    (strgUsr.charAt(ii) == "n") || 
+                    (strgUsr.charAt(ii) == "p") ||
+                    (strgUsr.charAt(ii) == "q") ||
+                    (strgUsr.charAt(ii) == "r") || 
+                    (strgUsr.charAt(ii) == "s") || 
+                    (strgUsr.charAt(ii) == "t") ||
+                    (strgUsr.charAt(ii) == "v") ||
+                    (strgUsr.charAt(ii) == "w") || 
+                    (strgUsr.charAt(ii) == "x") || 
+                    (strgUsr.charAt(ii) == "y") ||
+                    (strgUsr.charAt(ii) == "z")){
+                        con = con+ 1
+                    }
+
+                    else{
+                        etc += 1;
+                    }
+                    
+                }
+
+                document.getElementById("tab").innerHTML = "<tr><td>Essa string possui "+vog+" vogais</td><td>Essa string possui "+con+" consoantes</td></tr><tr><td>Essa string possui "+digt+" digitos</td><td>Essa string possui outros "+etc+" caracteres</td></tr>";
+
+            }
+        </script>
+        <form name="frm">
+            Digite algo qualquer: <input type="text" name="string"><br>
+            <input type="button" value="enviar" onclick="enviarDados();" readonly><br>
+        </form>
+
+        <table border='1' id="tab"></table>
+    </body>
+</html>

@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Ex 1</title>
+    </head>
+    <style>
+        table{
+            border: 1px solid black;
+        }
+    </style>
+    <body>
+        <script lang="javascript">
+            function enviarDados()
+            {
+                var strUsr, char;
+                strUsr = document.frm.string.value;                
+            
+                document.write("<table border='1'>")
+                document.write("<tr>")
+                for (let ii = 0; ii < strUsr.length; ii++)
+                {
+                    char = strUsr.charAt(ii);
+                    document.write("<td>"+char+"</td>")
+
+                }
+                document.write("</tr>")
+                document.write("</table>")
+
+                document.write("<table border='1'>")
+                for (let ii = 0; ii < strUsr.length; ii++)
+                {
+                    char = strUsr.charAt(ii);
+                    document.write("<tr>")
+                    document.write("<td>"+char+"</td>")
+                    document.write("</tr>")
+                }
+                document.write("</table>")
+
+            }
+        </script>
+
+        <form name="frm">
+            Digite algo qualquer: <input type="text" name="string" ><br>
+            <input type="button" value="Enviar" onclick="enviarDados();"><br>
+        </form>
+
+    </body>
+</html>

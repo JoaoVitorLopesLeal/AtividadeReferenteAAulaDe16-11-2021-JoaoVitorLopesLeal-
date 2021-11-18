@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Ex. 2</title>
+    </head>
+    <body>
+        <script>
+            function enviarDados()
+            {
+                var char, num, rep;
+                char = document.frm.char.value;
+                num  = parseInt(document.frm.num.value);
+
+                rep = char.repeat(num);  
+
+                document.getElementById("saida").value = rep;
+            }
+        </script>
+
+        <form name="frm">
+            Digite o que você quer repetir: <input type="text" name="char"><br>
+            Quantas vezes repetir: <input type="text" name="num"><br>
+        </form>
+
+        <input type="button" value="Enviar" onclick="enviarDados();"><br>
+
+        <input type="text" id="saida" size="50" readonly>
+    </body>
+</html>

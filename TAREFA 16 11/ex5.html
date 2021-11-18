@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <script language="javascript">
+            function enviarDados()
+            {
+                var nome, saida;
+                nome = document.frm.nome.value;
+                const div = nome.split(" ");
+                
+                saida = div[div.length-1] +", ";
+                for (let ii = 0; ii < div.length-1; ii++) {
+                    saida = saida.concat(div[ii]," ");
+                    
+                }
+                document.getElementById("saida").value = saida;
+
+            }
+        </script>
+        <form name="frm">
+            Nome:<input type="text" name="nome"><br>
+        </form>
+
+        <input type="button" value="Enviar" onclick="enviarDados();">
+        <br><br>
+
+        <input type="text" id="saida" size="40" readonly>
+        <!--<p id="saida"></p>-->
+    </body>
+</html>

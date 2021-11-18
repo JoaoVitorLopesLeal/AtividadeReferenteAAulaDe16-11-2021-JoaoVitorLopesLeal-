@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Ex. 6</title>
+    </head>
+    <body>
+        <script language="javascript">
+            function enviarDados()
+            {
+                var nome, saida;
+                nome = document.frm.nome.value;
+                const separado = nome.split(" ");
+                
+                saida = separado[separado.length-1] +", "+separado[0]+" ";
+
+                for (let ii = 1; ii < separado.length-1; ii++) {
+                    saida = saida.concat((separado[ii].charAt(0)),". ");
+                    
+                }
+                document.getElementById("saida").value = saida;
+
+            }
+        </script>
+        <form name="frm">
+            Nome:<input type="text" name="nome"><br>
+        </form>
+
+        <input type="button" value="Enviar" onclick="enviarDados();">
+        <br><br>
+
+        <input type="text" id="saida" size="40" readonly>
+        <!--<p id="saida"></p>-->
+    </body>
+</html>
